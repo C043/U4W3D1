@@ -28,3 +28,9 @@ SELECT *
 SELECT numero_fattura, importo, iva, data_fattura, denominazione
 	FROM public."Fatture" 
 	JOIN public."Fornitori" USING(num_fornitore)
+## ES7
+---
+SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fattura, COUNT(*)
+	FROM public."Fatture" 
+	WHERE iva = 20
+	GROUP BY EXTRACT(YEAR FROM data_fattura)
