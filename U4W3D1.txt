@@ -45,3 +45,9 @@ SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatture
 	FROM public."Fatture" 
 	GROUP BY data_fattura
 	HAVING COUNT(tipologia = 'A') > 2 
+## EXTRA ES10
+---
+SELECT SUM(importo) AS somma_importo, regione
+	FROM public."Fatture" 
+	JOIN public."Clienti" USING (id_cliente)
+	GROUP BY regione
