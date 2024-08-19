@@ -39,3 +39,9 @@ SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatture, COUNT(*)
 SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatture, COUNT(*), SUM(importo) AS somma_importo
 	FROM public."Fatture" 
 	GROUP BY EXTRACT(YEAR FROM data_fattura)
+## EXTRA ES9
+---
+SELECT EXTRACT(YEAR FROM data_fattura) AS anno_fatture
+	FROM public."Fatture" 
+	GROUP BY data_fattura
+	HAVING COUNT(tipologia = 'A') > 2 
