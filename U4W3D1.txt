@@ -1,0 +1,11 @@
+# ES1
+---
+SELECT * FROM public."Clienti" WHERE nome = 'Mario'
+# ES2
+---
+SELECT * FROM public."Clienti" WHERE anno_nascita = 1982
+# ES3
+---
+SELECT numero_fattura
+	FROM public."Fatture"
+	WHERE iva = 20
