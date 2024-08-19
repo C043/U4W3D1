@@ -51,3 +51,9 @@ SELECT SUM(importo) AS somma_importo, regione
 	FROM public."Fatture" 
 	JOIN public."Clienti" USING (id_cliente)
 	GROUP BY regione
+## EXTRA ES11
+---
+SELECT COUNT(*) AS numero_clienti
+	FROM public."Clienti"
+	JOIN public."Fatture" USING (id_cliente)
+	WHERE anno_nascita = 1980 AND importo > 50
